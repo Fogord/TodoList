@@ -3,7 +3,7 @@ import QtQuick.Controls 2.2
 
 Button {
     id: button
-    font.pixelSize: 16
+    font.pixelSize: 18*scaleFactor
 
     property var algorithm: ({})
 

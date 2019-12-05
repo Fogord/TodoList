@@ -12,8 +12,10 @@ ApplicationWindow{
 
     objectName: "Root"
 
-    width: 320
-    height: 548
+    property double scaleFactor: 4.0
+
+//    width: 320
+//    height: 548
     visible: true
 
     Material.theme: Material.Dark

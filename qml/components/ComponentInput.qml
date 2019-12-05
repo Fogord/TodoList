@@ -27,7 +27,7 @@ Item{
 
     TextField {
         id: input
-        font.pixelSize: 16
+        font.pixelSize: 18*scaleFactor
         anchors.left: parent.left
         anchors.right: btn.left
 

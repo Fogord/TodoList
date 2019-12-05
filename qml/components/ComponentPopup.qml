@@ -26,7 +26,7 @@ Popup {
 
     Label {
         id: popupLabel
-        font.pixelSize: 16
+        font.pixelSize: 18*scaleFactor
         anchors.centerIn: parent
     }
 }

@@ -41,7 +41,7 @@ var app = (function () {
                       },{
                             componentName: "Button",
                             property: {
-                                text: "Timers"
+                                text: "Todo List"
                             },
                             publish: {
                                 clicked: "timersCreate",

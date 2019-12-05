@@ -35,7 +35,7 @@ ListView {
     property string iconRemoveSource : ""
     property bool   isEditItems      : true
 
-    property double fontPixelSize    : 18
+    property double fontPixelSize    : 18*scaleFactor
 
 
     ListModel {
@@ -79,7 +79,7 @@ ListView {
 
             id: flickItem
             width: parent.width
-            height: 40
+            height: 40*scaleFactor
 
             onVisibleChanged: {
                 if (!visible){
@@ -127,10 +127,8 @@ ListView {
                         MouseArea {
                             anchors.fill: parent
                             onClicked: {
-                                view.currentIndex = model.index
-                                remove.width = change.width = content.x = 0
                                 hiddenSearchFild();
-                                itemDeteils()
+                                itemChanging()
                             }
                         }
                     }
@@ -181,92 +179,96 @@ ListView {
                     }
                 }
 
-                Rectangle{
-                    id: change
-                    height: content.height
-                    anchors.left: parent.left
-                    color: Material.color(Material.Orange)
+//                Rectangle{
+//                    id: change
+//                    height: content.height
+//                    anchors.left: parent.left
+//                    color: Material.color(Material.Orange)
 
-                    Image {
-                        id: iconChange
-                        width: parent.width/2
-                        height: parent.height/2
-                        anchors.centerIn: parent
-                        source: iconChangeSource
-                    }
+//                    Image {
+//                        id: iconChange
+//                        width: parent.width/2
+//                        height: parent.height/2
+//                        anchors.centerIn: parent
+//                        source: iconChangeSource
+//                    }
 
-                    Rectangle{
-                        id: changeRightBorder
-                        height: row.height
-                        width: 1
-                        color: Material.color(Material.Orange)
-                        anchors.right: change.right
-                        visible: change.width
-                    }
+//                    Rectangle{
+//                        id: changeRightBorder
+//                        height: row.height
+//                        width: 1
+//                        color: Material.color(Material.Orange)
+//                        anchors.right: change.right
+//                        visible: change.width
+//                    }
 
-                    MouseArea{
-                        anchors.fill: change
-                        onClicked: function() {
-                            view.currentIndex = model.index
-                            remove.width = change.width = content.x = 0
-                            hiddenSearchFild();
-                            itemChanging()
-                        }
-                    }
-                }
+//                    MouseArea{
+//                        anchors.fill: change
+//                        onClicked: function() {
+//                            view.currentIndex = model.index
+//                            remove.width = change.width = content.x = 0
+//                            hiddenSearchFild();
+//                            itemChanging()
+//                        }
+//                    }
+//                }
 
-                Rectangle{
-                    id: remove
-                    height: content.height
-                    anchors.right: parent.right
-                    color: Material.color(Material.Red)
+//                Rectangle{
+//                    id: remove
+//                    height: content.height
+//                    anchors.right: parent.right
+//                    color: Material.color(Material.Red)
 
-                    Image {
-                        id: iconRemove
-                        width: parent.width/2
-                        height: parent.height/2
-                        anchors.centerIn: parent
-                        source: iconRemoveSource
-                    }
+//                    Image {
+//                        id: iconRemove
+//                        width: parent.width/2
+//                        height: parent.height/2
+//                        anchors.centerIn: parent
+//                        source: iconRemoveSource
+//                    }
 
-                    Rectangle{
-                        id: removeLeftBorder
-                        height: row.height
-                        width: 1
-                        color: Material.color(Material.Red)
-                        anchors.left: remove.left
-                        visible: remove.width
-                    }
+//                    Rectangle{
+//                        id: removeLeftBorder
+//                        height: row.height
+//                        width: 1
+//                        color: Material.color(Material.Red)
+//                        anchors.left: remove.left
+//                        visible: remove.width
+//                    }
 
-                    MouseArea{
-                        anchors.fill: remove
-                        onClicked: function() {
-                            view.currentIndex = model.index
-                            remove.width = change.width = content.x = 0
-                            hiddenSearchFild();
-                            itemRemove();
-                        }
-                    }
-                }
+//                    MouseArea{
+//                        anchors.fill: remove
+//                        onClicked: function() {
+//                            view.currentIndex = model.index
+//                            remove.width = change.width = content.x = 0
+//                            hiddenSearchFild();
+//                            itemRemove();
+//                        }
+//                    }
+//                }
 
 
             }
 
-            onAtXBeginningChanged: {
-                if(atXBeginning && !atXEnd) {
-                    remove.width = content.x = 0;
-                    change.width = row.height;
-                    content.x    = row.height;
-                }
-            }
+//            onFlickableDirectionChanged: {
+//                cosnole.log(flicking, flickingHorizontally, flickingVertically)
+//            }
 
-            onAtXEndChanged: {
-                if(!atXBeginning && atXEnd) {
-                    change.width = content.x = 0;
-                    remove.width = row.height;
-                    content.x    = -row.height;
-                }
-            }
+//            onAtXBeginningChanged: {
+//                if(atXBeginning && !atXEnd) {
+//                    remove.width = content.x = 0;
+//                    change.width = row.height;
+//                    content.x    = row.height;
+//                }
+//            }
+
+//            onAtXEndChanged: {
+//                if(!atXBeginning && atXEnd) {
+//                    change.width = content.x = 0;
+//                    remove.width = row.height;
+//                    content.x    = -row.height;
+//                }
+//            }
     }
 }
 

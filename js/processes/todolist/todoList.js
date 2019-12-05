@@ -22,7 +22,7 @@ var todoList = (function () {
             componentName: "Popup",
             property: {
                 pading: 10,
-                popupText: "<br>" + "Created by: <i>Artem Yerko</i>" + "<br>" + "Date: 20.04.2018" + "<br>" + "Version: 1.0" + "<br>"
+                popupText: "<br>" + "Created by: <i>Artem Yerko</i>" + "<br>" + "Date: 20.04.2018" + "<br>" + "Version: 1.1" + "<br>"
             },
             publish: {
                 closed: "closedPopup"

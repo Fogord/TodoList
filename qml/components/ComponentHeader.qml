@@ -29,13 +29,13 @@ Item {
     property alias visibleText:    label.visible
     property alias visibleMenuBtn: menu.visible
 
-    property double fontPixelSize    : 18
+    property double fontPixelSize    : 18*scaleFactor
 
     ComponentButton {
         id: back
         height: parent.height
         text: "<"
-        width: 50
+        width: 100
         font.pixelSize: fontPixelSize
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -49,7 +49,7 @@ Item {
         id: add
         height: parent.height
         text: "+"
-        width: 50
+        width: 100
         font.pixelSize: fontPixelSize
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -83,7 +83,7 @@ Item {
         id: menu
         text: "≡"
         height: parent.height
-        width: 50
+        width: 100
         font.pixelSize: fontPixelSize
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
